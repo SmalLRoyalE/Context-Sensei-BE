@@ -1,0 +1,53 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --allow-read --allow-env --watch src/main.ts",
+    "start": "deno run --allow-net --allow-env --allow-read src/main.ts",
+    "test": "deno test --allow-net --allow-env --allow-read",
+    "discord": "deno run --allow-net --allow-read --allow-env src/bots/discord/bot.ts",
+    "gmeet": "deno run --allow-net --allow-read --allow-env src/bots/gmeet/bot.ts",
+    "train": "deno run --allow-net --allow-env --allow-read --allow-write src/services/nlp/models/trainModel.ts",
+    "test:nlp": "deno run --allow-net --allow-env --allow-read src/services/nlp/models/testModel.ts"
+  },
+  "imports": {
+    "$std/": "https://deno.land/std@0.207.0/",
+    "oak": "https://deno.land/x/oak@v12.6.1/mod.ts",
+    "cors": "https://deno.land/x/cors@v1.2.2/mod.ts",
+    "djwt": "https://deno.land/x/djwt@v2.9.1/mod.ts",
+    "redis": "https://deno.land/x/redis@v0.32.0/mod.ts",
+    "zod": "https://deno.land/x/zod@v3.22.4/mod.ts",
+    "dotenv": "https://deno.land/x/dotenv@v3.2.2/mod.ts",
+    "socket": "https://deno.land/x/socket_io@0.2.0/mod.ts",
+    "discordeno": "https://deno.land/x/discordeno@18.0.1/mod.ts",
+    "bcrypt": "https://deno.land/x/bcrypt@v0.4.1/mod.ts",
+    "mongo": "https://deno.land/x/mongo@v0.32.0/mod.ts",
+    "helmet": "https://deno.land/x/deno_helmet@1.0.1/mod.ts",
+    "rate_limit": "https://deno.land/x/oak_rate_limit@0.1.1/mod.ts",
+    "$src/": "./src/",
+    "openai": "npm:openai@^4.0.0",
+    "node-nlp": "npm:node-nlp@^4.0.0",
+    "luxon": "npm:luxon@^3.0.0",
+    "@tensorflow/tfjs-node": "npm:@tensorflow/tfjs-node@^4.17.0",
+    "@huggingface/transformers": "npm:@huggingface/transformers@^4.37.2",
+    "@huggingface/inference": "npm:@huggingface/inference@^2.6.4"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "lib": ["deno.window", "dom"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    },
+    "exclude": ["node_modules"]
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "semiColons": true,
+    "singleQuote": true
+  }
+}
