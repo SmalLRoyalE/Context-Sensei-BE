@@ -1,5 +1,5 @@
 import { Application, Router } from "oak";
-// Fix CORS import
+
 import { oakCors } from "https://deno.land/x/cors@v1.2.2/mod.ts";
 import { configureSecurityMiddleware, corsConfig } from "./middlewares/security.ts";
 import { errorHandler, notFoundHandler } from "./middlewares/errorHandler.ts";
